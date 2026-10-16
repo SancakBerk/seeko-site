@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="en" dir="ltr" data-root="1">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Seeko: Hidden Camera Detector</title>
 <meta name="description" content="Check a hotel room or rental for hidden cameras with lens, IR, Wi‑Fi and Bluetooth scans. Honest, on-device, free to start.">
 <link rel="icon" href="assets/favicon.png">
+<link rel="alternate" hreflang="en" href="https://seeko.approds.com/"><link rel="alternate" hreflang="tr" href="https://seeko.approds.com/tr/"><link rel="alternate" hreflang="de" href="https://seeko.approds.com/de/"><link rel="alternate" hreflang="fr" href="https://seeko.approds.com/fr/"><link rel="alternate" hreflang="es" href="https://seeko.approds.com/es/"><link rel="alternate" hreflang="pt" href="https://seeko.approds.com/pt/"><link rel="alternate" hreflang="it" href="https://seeko.approds.com/it/"><link rel="alternate" hreflang="ja" href="https://seeko.approds.com/ja/"><link rel="alternate" hreflang="ko" href="https://seeko.approds.com/ko/"><link rel="alternate" hreflang="ar" href="https://seeko.approds.com/ar/"><link rel="alternate" hreflang="th" href="https://seeko.approds.com/th/"><link rel="alternate" hreflang="vi" href="https://seeko.approds.com/vi/"><link rel="alternate" hreflang="id" href="https://seeko.approds.com/id/">
 <style>
 :root{--bg:#F5F7FB;--surface:#FFFFFF;--surface2:#ECEFF7;--text:#141A2B;--text2:#59617A;--line:#D3D9E6;
 --accent:#4F5BD5;--accent-soft:#E6E8FB;--accent-text:#4F5BD5;--on-accent:#FFFFFF;--signal:#9A5600;--success:#17734A;
@@ -21,10 +22,10 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.0625rem;color:var(--text);text-decoration:none}
 .brand img{width:32px;height:32px;border-radius:8px}
-.lang{display:flex;gap:4px;background:var(--surface2);padding:3px;border-radius:10px}
-.lang button{border:0;background:transparent;color:var(--text2);font:600 .875rem var(--sans);padding:6px 10px;border-radius:8px;cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--surface);color:var(--text)}
-html[data-lang="en"] [lang="tr"],html[data-lang="tr"] [lang="en"]{display:none!important}
+.lang select{appearance:none;-webkit-appearance:none;border:0;background:var(--surface2);color:var(--text);font:600 .875rem var(--sans);padding:8px 30px 8px 12px;border-radius:10px;cursor:pointer;
+background-image:linear-gradient(45deg,transparent 50%,var(--text2) 50%),linear-gradient(135deg,var(--text2) 50%,transparent 50%);background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+[dir="rtl"] .lang select{padding:8px 12px 8px 30px;background-position:15px 52%,10px 52%}
+.note{background:var(--surface2);border-radius:12px;padding:10px 14px;color:var(--text2);font-size:.875rem;margin:0 0 18px}
 .hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:40px 56px}
 .hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 16px;text-wrap:balance}
 .hero p.lead{font-size:1.1875rem;color:var(--text2);margin:0 0 24px;max-width:34em}
@@ -64,55 +65,28 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:10px}
 </style>
 </head>
 <body>
-<header class="top wrap"><a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="32" height="32">Seeko</a><div class="lang" role="group" aria-label="Language"><button type="button" data-set-lang="en" aria-pressed="true">EN</button><button type="button" data-set-lang="tr" aria-pressed="false">TR</button></div></header><main>
+<header class="top wrap"><a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="32" height="32">Seeko</a><label class="lang"><span class="sr" hidden>Language</span><select id="lang" aria-label="Language"><option lang="en" value="index.html" selected>English</option><option lang="tr" value="tr/index.html">Türkçe</option><option lang="de" value="de/index.html">Deutsch</option><option lang="fr" value="fr/index.html">Français</option><option lang="es" value="es/index.html">Español</option><option lang="pt" value="pt/index.html">Português (Brasil)</option><option lang="it" value="it/index.html">Italiano</option><option lang="ja" value="ja/index.html">日本語</option><option lang="ko" value="ko/index.html">한국어</option><option lang="ar" value="ar/index.html">العربية</option><option lang="th" value="th/index.html">ไทย</option><option lang="vi" value="vi/index.html">Tiếng Việt</option><option lang="id" value="id/index.html">Bahasa Indonesia</option></select></label></header><main>
 <div class="wrap">
 <section class="hero">
 <div>
-<p class="eyebrow"><span lang="en">Hidden camera detector for iPhone</span><span lang="tr">iPhone için gizli kamera dedektörü</span></p>
-<h1><span lang="en">Check your room for hidden cameras</span><span lang="tr">Odanı gizli kameralara karşı kontrol et</span></h1>
-<p class="lead"><span lang="en">Lens, infrared, Wi‑Fi and Bluetooth scans, a room checklist and a tracker check, all on your phone. Your first 3 room checks are free, and results are never blurred.</span><span lang="tr">Lens, kızılötesi, Wi‑Fi ve Bluetooth taramaları, oda kontrol listesi ve takip cihazı kontrolü; hepsi telefonunda. İlk 3 oda kontrolün ücretsiz, sonuçlar hiçbir zaman bulanıklaştırılmaz.</span></p>
-<span class="store" aria-disabled="true"><span lang="en">Coming soon<small>on the App Store</small></span><span lang="tr">Yakında<small>App Store'da</small></span></span>
+<p class="eyebrow">Hidden camera detector for iPhone</p>
+<h1>Check your room for hidden cameras</h1>
+<p class="lead">Lens, infrared, Wi‑Fi and Bluetooth scans, a room checklist and a tracker check, all on your phone. Your first 3 room checks are free, and results are never blurred.</p>
+<span class="store" aria-disabled="true">Coming soon<small>on the App Store</small></span>
 </div>
 <div class="hero-art"><img src="assets/icon.png" alt="Seeko app icon" width="240" height="240"></div>
 </section>
-<section class="block" aria-labelledby="f-h">
-<h2 id="f-h"><span lang="en">Four scans and a checklist</span><span lang="tr">Dört tarama ve bir kontrol listesi</span></h2>
-<div class="grid">
-<article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="3.4"/></svg></span><h3><span lang="en">Lens scan</span><span lang="tr">Lens taraması</span></h3><p><span lang="en">Your flash blinks and the camera looks for small points that blink with it, the way a lens sends light back.</span><span lang="tr">Flaşın yanıp söner, kamera onunla birlikte parlayan küçük noktaları arar; lens ışığı tam geri yansıtır.</span></p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M5.6 18.4l1.6-1.6M16.8 7.2l1.6-1.6"/></svg></span><h3><span lang="en">IR scan</span><span lang="tr">IR taraması</span></h3><p><span lang="en">The infrared lights of night cameras are invisible to your eyes but show up on most front cameras.</span><span lang="tr">Gece kameralarının kızılötesi ışıkları gözle görünmez ama çoğu ön kamerada görünür.</span></p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.6 16a5 5 0 0 1 6.8 0"/><circle cx="12" cy="19.2" r=".9"/></svg></span><h3><span lang="en">Network scan</span><span lang="tr">Ağ taraması</span></h3><p><span lang="en">Lists the devices on the Wi‑Fi you joined and shows possible cameras with the reasons.</span><span lang="tr">Bağlı olduğun Wi‑Fi'daki cihazları listeler, olası kameraları nedenleriyle gösterir.</span></p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7l10 10-5 4V3l5 4L7 17"/></svg></span><h3><span lang="en">Bluetooth and trackers</span><span lang="tr">Bluetooth ve takip cihazları</span></h3><p><span lang="en">Follow a signal to a device, and check whether an AirTag, Tile or SmartTag is travelling with you.</span><span lang="tr">Bir sinyali cihaza kadar takip et; seninle gelen bir AirTag, Tile veya SmartTag var mı bak.</span></p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg></span><h3><span lang="en">Room checklist</span><span lang="tr">Oda kontrol listesi</span></h3><p><span lang="en">The spots where cameras are often hidden, room by room.</span><span lang="tr">Kameraların sık gizlendiği noktalar, oda oda.</span></p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3><span lang="en">If you find something</span><span lang="tr">Bir şey bulursan</span></h3><p><span lang="en">Calm steps, a ready message for the host or platform, and an evidence report with Pro.</span><span lang="tr">Sakin adımlar, ev sahibine ya da platforma hazır mesaj ve Pro ile kanıt raporu.</span></p></article>
+<section class="block" aria-labelledby="f-h"><h2 id="f-h">Four scans and a checklist</h2><div class="grid"><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="3.4"/></svg></span><h3>Lens scan</h3><p>Your flash blinks and the camera looks for small points that blink with it, the way a lens sends light back.</p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M5.6 18.4l1.6-1.6M16.8 7.2l1.6-1.6"/></svg></span><h3>IR scan</h3><p>The infrared lights of night cameras are invisible to your eyes but show up on most front cameras.</p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.6 16a5 5 0 0 1 6.8 0"/><circle cx="12" cy="19.2" r=".9"/></svg></span><h3>Network scan</h3><p>Lists the devices on the Wi‑Fi you joined and shows possible cameras with the reasons.</p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7l10 10-5 4V3l5 4L7 17"/></svg></span><h3>Bluetooth and trackers</h3><p>Follow a signal to a device, and check whether an AirTag, Tile or SmartTag is travelling with you.</p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg></span><h3>Room checklist</h3><p>The spots where cameras are often hidden, room by room.</p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>If you find something</h3><p>Calm steps, a ready message for the host or platform, and an evidence report with Pro.</p></article></div></section>
+<section class="block" aria-labelledby="h-h"><h2 id="h-h">How it works</h2><ol class="steps"><li><div><b>Run the full check</b><span>Network, Bluetooth, lens and IR in about five minutes. A quick check takes one.</span></div></li><li><div><b>See every result, with reasons</b><span>Nothing is hidden behind a paywall. Each scan tells you how to get the best result.</span></div></li><li><div><b>Know what to do next</b><span>Steps to stay safe, the emergency number and a ready message for the host or platform.</span></div></li></ol></section>
+<section class="block" aria-labelledby="p-h"><h2 id="p-h">Honest by design</h2><div class="grid"><article class="card"><h3>Only what a phone can measure</h3><p>No radiation, EMF or “magnetic” readings: reflections, infrared light, open ports and signal strength.</p></article><article class="card"><h3>Stays on your phone</h3><p>No account, no ads, no tracking. Camera images are analysed on the phone and never uploaded.</p></article><article class="card"><h3>Free to start</h3><p>Three free room checks and a free tracker check. Pro adds every room, history, PDF reports and Trip Mode.</p></article></div></section>
+<section class="block" aria-labelledby="q-h"><h2 id="q-h">Questions</h2><details><summary>Can an app find every camera?</summary><p>No phone app can promise that. Using all the scans and the checklist together gives the widest check; the app tells you how to use each one.</p></details><details><summary>Do I need Wi‑Fi?</summary><p>Only for the network scan. Lens, IR and Bluetooth scans work without it.</p></details><details><summary>What does Pro cost?</summary><p>A 7-day Trip Pass, a yearly plan or a one-time lifetime purchase. Prices are shown in the app before you buy.</p></details><details><summary>How do I get help?</summary><p>See the <a href="support.html">support page</a>.</p></details></section>
 </div>
-</section>
-<section class="block" aria-labelledby="h-h">
-<h2 id="h-h"><span lang="en">How it works</span><span lang="tr">Nasıl çalışır</span></h2>
-<ol class="steps">
-<li><div><b><span lang="en">Run the full check</span><span lang="tr">Tam kontrolü başlat</span></b><span><span lang="en">Network, Bluetooth, lens and IR in about five minutes. A quick check takes one.</span><span lang="tr">Ağ, Bluetooth, lens ve IR yaklaşık beş dakikada. Hızlı kontrol bir dakika.</span></span></div></li>
-<li><div><b><span lang="en">See every result, with reasons</span><span lang="tr">Her sonucu nedeniyle gör</span></b><span><span lang="en">Nothing is hidden behind a paywall. Each scan tells you how to get the best result.</span><span lang="tr">Hiçbir sonuç ödeme duvarının arkasında değil. Her tarama en iyi sonucu nasıl alacağını söyler.</span></span></div></li>
-<li><div><b><span lang="en">Know what to do next</span><span lang="tr">Sonra ne yapacağını bil</span></b><span><span lang="en">Steps to stay safe, the emergency number and a ready message for the host or platform.</span><span lang="tr">Güvende kalmak için adımlar, acil numara ve ev sahibine ya da platforma hazır mesaj.</span></span></div></li>
-</ol>
-</section>
-<section class="block" aria-labelledby="p-h">
-<h2 id="p-h"><span lang="en">Honest by design</span><span lang="tr">Dürüst tasarım</span></h2>
-<div class="grid">
-<article class="card"><h3><span lang="en">Only what a phone can measure</span><span lang="tr">Yalnızca telefonun ölçebildikleri</span></h3><p><span lang="en">No radiation, EMF or “magnetic” readings: reflections, infrared light, open ports and signal strength.</span><span lang="tr">Radyasyon, EMF ya da “manyetik” ölçüm yok: yansıma, kızılötesi ışık, açık port ve sinyal gücü.</span></p></article>
-<article class="card"><h3><span lang="en">Stays on your phone</span><span lang="tr">Telefonunda kalır</span></h3><p><span lang="en">No account, no ads, no tracking. Camera images are analysed on the phone and never uploaded.</span><span lang="tr">Hesap yok, reklam yok, takip yok. Kamera görüntüsü telefonda incelenir, hiçbir yere yüklenmez.</span></p></article>
-<article class="card"><h3><span lang="en">Free to start</span><span lang="tr">Ücretsiz başla</span></h3><p><span lang="en">Three free room checks and a free tracker check. Pro adds every room, history, PDF reports and Trip Mode.</span><span lang="tr">Üç ücretsiz oda kontrolü ve ücretsiz takip cihazı kontrolü. Pro tüm odaları, geçmişi, PDF raporu ve Gezi Modu'nu ekler.</span></p></article>
-</div>
-</section>
-<section class="block" aria-labelledby="q-h">
-<h2 id="q-h"><span lang="en">Questions</span><span lang="tr">Sorular</span></h2>
-<details><summary><span lang="en">Can an app find every camera?</span><span lang="tr">Bir uygulama her kamerayı bulabilir mi?</span></summary><p><span lang="en">No phone app can promise that. Using all the scans and the checklist together gives the widest check; the app tells you how to use each one.</span><span lang="tr">Hiçbir telefon uygulaması bunu vaat edemez. Tüm taramaları ve kontrol listesini birlikte kullanmak en geniş kontrolü sağlar; uygulama her birini nasıl kullanacağını söyler.</span></p></details>
-<details><summary><span lang="en">Do I need Wi‑Fi?</span><span lang="tr">Wi‑Fi gerekiyor mu?</span></summary><p><span lang="en">Only for the network scan. Lens, IR and Bluetooth scans work without it.</span><span lang="tr">Yalnızca ağ taraması için. Lens, IR ve Bluetooth taramaları Wi‑Fi olmadan çalışır.</span></p></details>
-<details><summary><span lang="en">What does Pro cost?</span><span lang="tr">Pro ne kadar?</span></summary><p><span lang="en">A 7-day Trip Pass, a yearly plan or a one-time lifetime purchase. Prices are shown in the app before you buy.</span><span lang="tr">7 günlük Gezi Paketi, yıllık plan ya da tek seferlik ömür boyu satın alma. Fiyatlar satın almadan önce uygulamada gösterilir.</span></p></details>
-<details><summary><span lang="en">How do I get help?</span><span lang="tr">Nasıl yardım alırım?</span></summary><p><span lang="en">See the <a href="support.html">support page</a>.</span><span lang="tr"><a href="support.html#tr">Destek sayfasına</a> bak.</span></p></details>
-</section>
-</div>
-</main><footer><div class="wrap"><nav aria-label="Legal"><a href="privacy.html"><span lang="en">Privacy</span><span lang="tr">Gizlilik</span></a><a href="terms.html"><span lang="en">Terms</span><span lang="tr">Koşullar</span></a><a href="kvkk.html"><span lang="en">KVKK</span><span lang="tr">KVKK</span></a><a href="support.html"><span lang="en">Support</span><span lang="tr">Destek</span></a></nav><div>© 2026 Berk Sancak · approds</div></div></footer><script>
+</main><footer><div class="wrap"><nav aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a><a href="kvkk.html">KVKK</a></nav><div>© 2026 Berk Sancak · approds</div></div></footer><script>
 (function(){
-  var root=document.documentElement, h=location.hash.replace('#','');
-  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
-  var lang=(h==='tr'||h==='en')?h:(saved||((navigator.language||'en').toLowerCase().indexOf('tr')===0?'tr':'en'));
-  function set(l){root.dataset.lang=l;root.lang=l;document.querySelectorAll('[data-set-lang]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.setLang===l))});try{localStorage.setItem('lang',l)}catch(e){}}
-  set(lang);
-  document.addEventListener('click',function(e){var b=e.target.closest('[data-set-lang]');if(b)set(b.dataset.setLang)});
+  var s=document.getElementById('lang');
+  if(s)s.addEventListener('change',function(){try{localStorage.setItem('lang',s.options[s.selectedIndex].lang)}catch(e){}location.href=s.value});
+  var h=location.hash.replace('#',''), root=document.documentElement.dataset.root;
+  if(root==='1'&&h){var o=document.querySelector('#lang option[lang="'+h+'"]');if(o&&h!=='en')location.replace(o.value);}
 })();
 </script>
 </body>

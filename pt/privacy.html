@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt" dir="ltr" data-root="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seeko – Política de privacidade</title>
+<meta name="description" content="Como o Seeko trata seus dados: tudo fica no seu celular.">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="alternate" hreflang="en" href="https://seeko.approds.com/privacy"><link rel="alternate" hreflang="tr" href="https://seeko.approds.com/tr/privacy"><link rel="alternate" hreflang="de" href="https://seeko.approds.com/de/privacy"><link rel="alternate" hreflang="fr" href="https://seeko.approds.com/fr/privacy"><link rel="alternate" hreflang="es" href="https://seeko.approds.com/es/privacy"><link rel="alternate" hreflang="pt" href="https://seeko.approds.com/pt/privacy"><link rel="alternate" hreflang="it" href="https://seeko.approds.com/it/privacy"><link rel="alternate" hreflang="ja" href="https://seeko.approds.com/ja/privacy"><link rel="alternate" hreflang="ko" href="https://seeko.approds.com/ko/privacy"><link rel="alternate" hreflang="ar" href="https://seeko.approds.com/ar/privacy"><link rel="alternate" hreflang="th" href="https://seeko.approds.com/th/privacy"><link rel="alternate" hreflang="vi" href="https://seeko.approds.com/vi/privacy"><link rel="alternate" hreflang="id" href="https://seeko.approds.com/id/privacy">
+<style>
+:root{--bg:#F5F7FB;--surface:#FFFFFF;--surface2:#ECEFF7;--text:#141A2B;--text2:#59617A;--line:#D3D9E6;
+--accent:#4F5BD5;--accent-soft:#E6E8FB;--accent-text:#4F5BD5;--on-accent:#FFFFFF;--signal:#9A5600;--success:#17734A;
+--mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1220;--surface:#171B2C;--surface2:#21263A;--text:#EDEFF7;--text2:#A1A8BE;--line:#323953;
+--accent:#8C96F0;--accent-soft:#252B4D;--accent-text:#A3ABF6;--on-accent:#0F1220;--signal:#F2B45A;--success:#5BC98F;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.55 var(--sans)}
+a{color:var(--accent-text)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.0625rem;color:var(--text);text-decoration:none}
+.brand img{width:32px;height:32px;border-radius:8px}
+.lang select{appearance:none;-webkit-appearance:none;border:0;background:var(--surface2);color:var(--text);font:600 .875rem var(--sans);padding:8px 30px 8px 12px;border-radius:10px;cursor:pointer;
+background-image:linear-gradient(45deg,transparent 50%,var(--text2) 50%),linear-gradient(135deg,var(--text2) 50%,transparent 50%);background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+[dir="rtl"] .lang select{padding:8px 12px 8px 30px;background-position:15px 52%,10px 52%}
+.note{background:var(--surface2);border-radius:12px;padding:10px 14px;color:var(--text2);font-size:.875rem;margin:0 0 18px}
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:40px 56px}
+.hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 16px;text-wrap:balance}
+.hero p.lead{font-size:1.1875rem;color:var(--text2);margin:0 0 24px;max-width:34em}
+.store{display:inline-flex;align-items:center;gap:10px;background:var(--text);color:var(--bg);padding:12px 18px;border-radius:14px;font-weight:600;text-decoration:none}
+.store small{display:block;font-weight:500;font-size:.75rem;opacity:.75}
+.hero-art{justify-self:center;display:grid;place-items:center}
+.hero-art img{width:min(240px,60vw);height:auto;border-radius:22%;box-shadow:0 24px 60px rgba(20,26,43,.18)}
+.eyebrow{font:500 .8125rem/1.4 var(--mono);letter-spacing:.02em;color:var(--accent-text);margin:0 0 10px}
+section.block{padding-block:40px;border-top:1px solid var(--line)}
+section.block h2{font-size:1.625rem;line-height:1.2;margin:0 0 20px;text-wrap:balance}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--surface);border-radius:18px;padding:18px}
+.card .ic{width:36px;height:36px;border-radius:10px;background:var(--accent-soft);color:var(--accent-text);display:grid;place-items:center;margin-bottom:10px}
+.card .ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.0625rem;margin:0 0 4px}
+.card p{margin:0;color:var(--text2);font-size:.96875rem}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font:600 .9375rem var(--mono)}
+.steps b{display:block}
+.steps span{color:var(--text2)}
+details{background:var(--surface);border-radius:14px;padding:14px 16px}
+details+details{margin-top:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:8px 0 0;color:var(--text2)}
+.doc{max-width:720px;padding-block:24px 48px}
+.doc h1{font-size:clamp(1.75rem,4vw,2.25rem);line-height:1.15;margin:0 0 6px}
+.doc .meta{color:var(--text2);font-size:.875rem;margin:0 0 24px}
+.doc h2{font-size:1.125rem;margin:28px 0 6px}
+.doc li{margin-bottom:6px}
+.contact{background:var(--surface);border-radius:16px;padding:18px;margin:16px 0}
+.contact a{font-weight:600;font-size:1.0625rem}
+footer{border-top:1px solid var(--line);padding-block:24px 40px;color:var(--text2);font-size:.875rem}
+footer nav{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:10px}
+@media (max-width:720px){.hero{grid-template-columns:1fr;padding-block:20px 40px}.hero-art{order:-1}.hero-art img{width:132px}}
+@media (prefers-reduced-motion:no-preference){.card{transition:transform .15s}.card:hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+<header class="top wrap"><a class="brand" href="../pt/index.html"><img src="../assets/icon.png" alt="" width="32" height="32">Seeko</a><label class="lang"><span class="sr" hidden>Idioma</span><select id="lang" aria-label="Idioma"><option lang="en" value="../privacy.html">English</option><option lang="tr" value="../tr/privacy.html">Türkçe</option><option lang="de" value="../de/privacy.html">Deutsch</option><option lang="fr" value="../fr/privacy.html">Français</option><option lang="es" value="../es/privacy.html">Español</option><option lang="pt" value="../pt/privacy.html" selected>Português (Brasil)</option><option lang="it" value="../it/privacy.html">Italiano</option><option lang="ja" value="../ja/privacy.html">日本語</option><option lang="ko" value="../ko/privacy.html">한국어</option><option lang="ar" value="../ar/privacy.html">العربية</option><option lang="th" value="../th/privacy.html">ไทย</option><option lang="vi" value="../vi/privacy.html">Tiếng Việt</option><option lang="id" value="../id/privacy.html">Bahasa Indonesia</option></select></label></header><main><div class="wrap doc"><article><h1>Política de privacidade</h1><p class="meta">Seeko: Detector de câmeras escondidas · Atualizado em 16 de outubro de 2026 · Berk Sancak</p><p class="note">Esta é uma tradução. Em caso de divergência, vale a versão em inglês.</p><p>O Seeko ajuda você a verificar um cômodo contra câmeras escondidas. Funciona sem conta, e tudo o que ele mede é processado no seu celular.</p><h2>O que fica no seu celular</h2><ul><li>As imagens das varreduras de lentes e IR são analisadas no celular; não são gravadas nem enviadas.</li><li>Os resultados das varreduras de rede e Bluetooth, a lista do quarto, viagens, hospedagens e verificações salvas ficam guardados no app, no seu celular.</li><li>As fotos de prova e anotações que você adiciona ficam na pasta do próprio app. Não são salvas na sua galeria nem enviadas para lugar nenhum, a menos que você as compartilhe.</li><li>Um pequeno contador das suas verificações grátis fica no chaveiro do celular para continuar igual depois de reinstalar.</li></ul><h2>Permissões</h2><p>O app pede cada permissão logo antes do recurso que precisa dela: câmera (varreduras de lentes e IR, fotos de prova), rede local (varredura de rede), Bluetooth (varredura Bluetooth e verificação de rastreadores), fotos (só se você escolher uma foto para suas provas) e notificações (lembretes de check-in, agendados no celular). Você pode desativar qualquer uma em Ajustes.</p><h2>Compras</h2><p>Os pagamentos são processados pela Apple. Para liberar o Pro nos seus aparelhos, o app usa a RevenueCat, Inc., que recebe suas informações de compra e um ID de usuário aleatório. A RevenueCat não recebe seu nome, e-mail nem resultados. Veja <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</p><h2>O que não fazemos</h2><p>Sem análises, sem publicidade, sem rastreamento entre apps ou sites e sem venda de dados. Este site não usa cookies.</p><h2>Compartilhamento</h2><p>Um relatório ou mensagem só sai do seu celular quando você mesmo compartilha, pelo menu de compartilhamento, com as pessoas ou apps que escolher.</p><h2>Guarda e exclusão</h2><p>Os dados ficam no seu celular até você apagá-los. Você pode apagar fotos de prova no app. Apagar o app remove tudo o que ele guardou, exceto o contador de verificações grátis no chaveiro, que guarda só um número. Se você escrever para o suporte, guardamos a conversa por até dois anos e apagamos antes se você pedir.</p><h2>Crianças</h2><p>O app não é direcionado a menores de 13 anos e não coleta dados deles conscientemente.</p><h2>Seus direitos e contato</h2><p>Para dúvidas ou pedidos sobre seus dados, incluindo os previstos na LGPD, no GDPR ou na KVKK da Turquia, escreva para <a href="mailto:berk.kurumsal@hotmail.com">berk.kurumsal@hotmail.com</a>. Veja também o <a href="../kvkk.html">aviso KVKK</a>. Se esta política mudar, a nova versão será publicada aqui com nova data.</p></article></div></main><footer><div class="wrap"><nav aria-label="Legal"><a href="../pt/privacy.html">Privacidade</a><a href="../pt/terms.html">Termos</a><a href="../pt/support.html">Suporte</a><a href="../kvkk.html">KVKK</a></nav><div>© 2026 Berk Sancak · approds</div></div></footer><script>
+(function(){
+  var s=document.getElementById('lang');
+  if(s)s.addEventListener('change',function(){try{localStorage.setItem('lang',s.options[s.selectedIndex].lang)}catch(e){}location.href=s.value});
+  var h=location.hash.replace('#',''), root=document.documentElement.dataset.root;
+  if(root==='1'&&h){var o=document.querySelector('#lang option[lang="'+h+'"]');if(o&&h!=='en')location.replace(o.value);}
+})();
+</script>
+</body>
+</html>

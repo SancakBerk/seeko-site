@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr" dir="ltr" data-root="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seeko : Détecteur de caméra cachée</title>
+<meta name="description" content="Vérifiez une chambre d'hôtel ou une location contre les caméras cachées avec des scans objectif, IR, Wi‑Fi et Bluetooth. Honnête, sur l'appareil, gratuit pour commencer.">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="alternate" hreflang="en" href="https://seeko.approds.com/"><link rel="alternate" hreflang="tr" href="https://seeko.approds.com/tr/"><link rel="alternate" hreflang="de" href="https://seeko.approds.com/de/"><link rel="alternate" hreflang="fr" href="https://seeko.approds.com/fr/"><link rel="alternate" hreflang="es" href="https://seeko.approds.com/es/"><link rel="alternate" hreflang="pt" href="https://seeko.approds.com/pt/"><link rel="alternate" hreflang="it" href="https://seeko.approds.com/it/"><link rel="alternate" hreflang="ja" href="https://seeko.approds.com/ja/"><link rel="alternate" hreflang="ko" href="https://seeko.approds.com/ko/"><link rel="alternate" hreflang="ar" href="https://seeko.approds.com/ar/"><link rel="alternate" hreflang="th" href="https://seeko.approds.com/th/"><link rel="alternate" hreflang="vi" href="https://seeko.approds.com/vi/"><link rel="alternate" hreflang="id" href="https://seeko.approds.com/id/">
+<style>
+:root{--bg:#F5F7FB;--surface:#FFFFFF;--surface2:#ECEFF7;--text:#141A2B;--text2:#59617A;--line:#D3D9E6;
+--accent:#4F5BD5;--accent-soft:#E6E8FB;--accent-text:#4F5BD5;--on-accent:#FFFFFF;--signal:#9A5600;--success:#17734A;
+--mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1220;--surface:#171B2C;--surface2:#21263A;--text:#EDEFF7;--text2:#A1A8BE;--line:#323953;
+--accent:#8C96F0;--accent-soft:#252B4D;--accent-text:#A3ABF6;--on-accent:#0F1220;--signal:#F2B45A;--success:#5BC98F;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.55 var(--sans)}
+a{color:var(--accent-text)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.0625rem;color:var(--text);text-decoration:none}
+.brand img{width:32px;height:32px;border-radius:8px}
+.lang select{appearance:none;-webkit-appearance:none;border:0;background:var(--surface2);color:var(--text);font:600 .875rem var(--sans);padding:8px 30px 8px 12px;border-radius:10px;cursor:pointer;
+background-image:linear-gradient(45deg,transparent 50%,var(--text2) 50%),linear-gradient(135deg,var(--text2) 50%,transparent 50%);background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+[dir="rtl"] .lang select{padding:8px 12px 8px 30px;background-position:15px 52%,10px 52%}
+.note{background:var(--surface2);border-radius:12px;padding:10px 14px;color:var(--text2);font-size:.875rem;margin:0 0 18px}
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:40px 56px}
+.hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 16px;text-wrap:balance}
+.hero p.lead{font-size:1.1875rem;color:var(--text2);margin:0 0 24px;max-width:34em}
+.store{display:inline-flex;align-items:center;gap:10px;background:var(--text);color:var(--bg);padding:12px 18px;border-radius:14px;font-weight:600;text-decoration:none}
+.store small{display:block;font-weight:500;font-size:.75rem;opacity:.75}
+.hero-art{justify-self:center;display:grid;place-items:center}
+.hero-art img{width:min(240px,60vw);height:auto;border-radius:22%;box-shadow:0 24px 60px rgba(20,26,43,.18)}
+.eyebrow{font:500 .8125rem/1.4 var(--mono);letter-spacing:.02em;color:var(--accent-text);margin:0 0 10px}
+section.block{padding-block:40px;border-top:1px solid var(--line)}
+section.block h2{font-size:1.625rem;line-height:1.2;margin:0 0 20px;text-wrap:balance}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--surface);border-radius:18px;padding:18px}
+.card .ic{width:36px;height:36px;border-radius:10px;background:var(--accent-soft);color:var(--accent-text);display:grid;place-items:center;margin-bottom:10px}
+.card .ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.0625rem;margin:0 0 4px}
+.card p{margin:0;color:var(--text2);font-size:.96875rem}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font:600 .9375rem var(--mono)}
+.steps b{display:block}
+.steps span{color:var(--text2)}
+details{background:var(--surface);border-radius:14px;padding:14px 16px}
+details+details{margin-top:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:8px 0 0;color:var(--text2)}
+.doc{max-width:720px;padding-block:24px 48px}
+.doc h1{font-size:clamp(1.75rem,4vw,2.25rem);line-height:1.15;margin:0 0 6px}
+.doc .meta{color:var(--text2);font-size:.875rem;margin:0 0 24px}
+.doc h2{font-size:1.125rem;margin:28px 0 6px}
+.doc li{margin-bottom:6px}
+.contact{background:var(--surface);border-radius:16px;padding:18px;margin:16px 0}
+.contact a{font-weight:600;font-size:1.0625rem}
+footer{border-top:1px solid var(--line);padding-block:24px 40px;color:var(--text2);font-size:.875rem}
+footer nav{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:10px}
+@media (max-width:720px){.hero{grid-template-columns:1fr;padding-block:20px 40px}.hero-art{order:-1}.hero-art img{width:132px}}
+@media (prefers-reduced-motion:no-preference){.card{transition:transform .15s}.card:hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+<header class="top wrap"><a class="brand" href="../fr/index.html"><img src="../assets/icon.png" alt="" width="32" height="32">Seeko</a><label class="lang"><span class="sr" hidden>Langue</span><select id="lang" aria-label="Langue"><option lang="en" value="../index.html">English</option><option lang="tr" value="../tr/index.html">Türkçe</option><option lang="de" value="../de/index.html">Deutsch</option><option lang="fr" value="../fr/index.html" selected>Français</option><option lang="es" value="../es/index.html">Español</option><option lang="pt" value="../pt/index.html">Português (Brasil)</option><option lang="it" value="../it/index.html">Italiano</option><option lang="ja" value="../ja/index.html">日本語</option><option lang="ko" value="../ko/index.html">한국어</option><option lang="ar" value="../ar/index.html">العربية</option><option lang="th" value="../th/index.html">ไทย</option><option lang="vi" value="../vi/index.html">Tiếng Việt</option><option lang="id" value="../id/index.html">Bahasa Indonesia</option></select></label></header><main>
+<div class="wrap">
+<section class="hero">
+<div>
+<p class="eyebrow">Détecteur de caméras cachées pour iPhone</p>
+<h1>Vérifiez votre chambre contre les caméras cachées</h1>
+<p class="lead">Scans objectif, infrarouge, Wi‑Fi et Bluetooth, une liste de contrôle de la pièce et une vérification des traceurs, le tout sur votre téléphone. Vos 3 premières vérifications sont gratuites, et les résultats ne sont jamais floutés.</p>
+<span class="store" aria-disabled="true">Bientôt<small>sur l'App Store</small></span>
+</div>
+<div class="hero-art"><img src="../assets/icon.png" alt="Icône de l'app Seeko" width="240" height="240"></div>
+</section>
+<section class="block" aria-labelledby="f-h"><h2 id="f-h">Quatre scans et une liste</h2><div class="grid"><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="3.4"/></svg></span><h3>Scan des objectifs</h3><p>Le flash clignote et l'appareil photo cherche les petits points qui clignotent avec lui, comme un objectif qui renvoie la lumière.</p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M5.6 18.4l1.6-1.6M16.8 7.2l1.6-1.6"/></svg></span><h3>Scan IR</h3><p>La lumière infrarouge des caméras de nuit est invisible à l'œil, mais visible pour la plupart des caméras avant.</p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.6 16a5 5 0 0 1 6.8 0"/><circle cx="12" cy="19.2" r=".9"/></svg></span><h3>Scan réseau</h3><p>Liste les appareils du Wi‑Fi auquel vous êtes connecté et montre les caméras possibles avec la raison.</p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7l10 10-5 4V3l5 4L7 17"/></svg></span><h3>Bluetooth et traceurs</h3><p>Suivez un signal jusqu'à l'appareil et vérifiez si un AirTag, Tile ou SmartTag voyage avec vous.</p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg></span><h3>Liste de la pièce</h3><p>Les endroits où l'on cache souvent des caméras, pièce par pièce.</p></article><article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Si vous trouvez quelque chose</h3><p>Des étapes calmes, un message prêt pour l'hôte ou la plateforme et, avec Pro, un rapport de preuves.</p></article></div></section>
+<section class="block" aria-labelledby="h-h"><h2 id="h-h">Comment ça marche</h2><ol class="steps"><li><div><b>Lancez la vérification complète</b><span>Réseau, Bluetooth, objectif et IR en cinq minutes environ. La vérification rapide en prend une.</span></div></li><li><div><b>Voyez chaque résultat, avec la raison</b><span>Rien n'est caché derrière un paywall. Chaque scan explique comment obtenir le meilleur résultat.</span></div></li><li><div><b>Sachez quoi faire ensuite</b><span>Des étapes pour rester en sécurité, le numéro d'urgence et un message prêt pour l'hôte ou la plateforme.</span></div></li></ol></section>
+<section class="block" aria-labelledby="p-h"><h2 id="p-h">Honnête par nature</h2><div class="grid"><article class="card"><h3>Seulement ce qu'un téléphone peut mesurer</h3><p>Aucune mesure de radiation, d'EMF ou « magnétique » : reflets, lumière infrarouge, ports ouverts et force du signal.</p></article><article class="card"><h3>Reste sur votre téléphone</h3><p>Pas de compte, pas de pub, pas de pistage. Les images sont analysées sur le téléphone et jamais envoyées.</p></article><article class="card"><h3>Gratuit pour commencer</h3><p>Trois vérifications de pièce gratuites et une vérification des traceurs gratuite. Pro ajoute chaque pièce, l'historique, les rapports PDF et le Mode Voyage.</p></article></div></section>
+<section class="block" aria-labelledby="q-h"><h2 id="q-h">Questions</h2><details><summary>Une app peut-elle trouver toutes les caméras ?</summary><p>Aucune app ne peut le promettre. Utiliser tous les scans et la liste ensemble donne la vérification la plus complète ; l'app explique comment utiliser chacun.</p></details><details><summary>Faut-il du Wi‑Fi ?</summary><p>Seulement pour le scan réseau. Les scans objectif, IR et Bluetooth fonctionnent sans.</p></details><details><summary>Combien coûte Pro ?</summary><p>Un Pass Voyage de 7 jours, un abonnement annuel ou un achat unique à vie. Les prix sont affichés dans l'app avant l'achat.</p></details><details><summary>Comment obtenir de l'aide ?</summary><p>Consultez la <a href="../fr/support.html">page d'assistance</a>.</p></details></section>
+</div>
+</main><footer><div class="wrap"><nav aria-label="Legal"><a href="../fr/privacy.html">Confidentialité</a><a href="../fr/terms.html">Conditions</a><a href="../fr/support.html">Assistance</a><a href="../kvkk.html">KVKK</a></nav><div>© 2026 Berk Sancak · approds</div></div></footer><script>
+(function(){
+  var s=document.getElementById('lang');
+  if(s)s.addEventListener('change',function(){try{localStorage.setItem('lang',s.options[s.selectedIndex].lang)}catch(e){}location.href=s.value});
+  var h=location.hash.replace('#',''), root=document.documentElement.dataset.root;
+  if(root==='1'&&h){var o=document.querySelector('#lang option[lang="'+h+'"]');if(o&&h!=='en')location.replace(o.value);}
+})();
+</script>
+</body>
+</html>
